@@ -1,0 +1,480 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Kdam Thmor Pro', sans-serif;
+}
+
+.navbar {
+	display: flex;
+	align-items: center;
+	padding: 20px;
+}
+
+nav {
+	flex: 1;
+	text-align: right;
+}
+
+nav ul {
+	display: inline-block;
+	list-style-type: none;
+}
+
+nav ul li {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+a {
+	text-decoration: none;
+	color: #555;
+}
+
+p {
+	color: #555;
+}
+
+.container {
+	max-width: 1300px;
+	margin: auto;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+.row {
+	display: flex;
+	align-items: left;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.col2 {
+	flex-basis: 50%;
+	min-width: 300px;
+}
+
+.col2 img {
+	max-width: 100%;
+	padding: 54px 0;
+}
+
+.col2 h1 {
+	font-size: 50px;
+	line-height: 60px;
+	margin: 54px 0px;
+}
+
+.btn {
+	display: inline-block;
+	background: #ff523b;
+	color: #fff;
+	padding: 8px 30px;
+	margin: 30px 0;
+	border-radius: 30px;
+	transition: background 0.5s;
+}
+
+.btn:hover {
+	background: firebrick;
+}
+
+.header {
+	background: radial-gradient(#fff, #ffd6d6)
+}
+
+.header .row {
+	margin-top: 80px;
+}
+
+.home {
+	background: radial-gradient(#fff, #ffd6d6)
+}
+
+.home .row {
+	margin-top: 0px;
+	background: radial-gradient(#fff, #ffd6d6)
+}
+
+.categories {
+	margin: 70px 0;
+}
+
+.col3 {
+	flex-basis: 30%;
+	min-width: 250px;
+	margin-bottom: 30px;
+}
+
+.col3 img {
+	width: 100%;
+}
+
+.small-container {
+	max-width: 1300px;
+	margin: auto;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+.col4 {
+	flex-basis: 25%;
+	padding: 10px;
+	min-width: 200px;
+	min-height: 150px;
+	margin-bottom: 50px;
+	transition: transfrom 0.5s;
+}
+
+.col4 img {
+	width: 100%;
+	height: 100%;
+}
+
+.col4 p {
+	font-size: 100%;
+}
+
+.col4:hover {
+	transform: translateY(-5px);
+}
+
+.title {
+	text-align: center;
+	margin: 0 auto 80px;
+	position: relative;
+	line-height: 60px;
+	color: #555;
+	display: block;
+}
+
+.account-page {
+	padding: 50px 0;
+	background: radial-grandient(#fff, #ffd6d6);
+}
+
+.form-container {
+	background: #fff;
+	width: 600px;
+	height: 900px;
+	position: relative;
+	text-align: center;
+	padding: 20px 0;
+	margin: auto;
+	box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+/*--All products ---*/
+.row2 {
+	justify-content: space-between;
+	margin: 100px auto 50px;
+}
+
+select {
+	border: 1px solid #ff523b;
+	padding: 5px;
+}
+
+select:focus {
+	outline: none;
+}
+
+.page-btn {
+	margin: 0 auto 88;
+}
+
+.page-btn span {
+	display: inline-block;
+	border: 1px solid #ff523b;
+	margin-left: 10px;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	cursor: pointer;
+}
+
+.page-btn span:hover {
+	background: #ff523b;
+	color: #fff;
+}
+
+/*--------single product details------*/
+.single-product {
+	margin-top: 80px;
+}
+
+.single-product .col2 img {
+	padding: 0;
+}
+
+.single-product .col2 {
+	padding: 20px;
+}
+
+.single-product h4 {
+	margin: 20px 0;
+	font-size: 22px;
+	font-weight: bold;
+}
+
+.singl-product input {
+	display: block;
+	padding: 10px;
+	margin-top: 20px;
+	font-size: 20px;
+	margin-right: 10px;
+	border: 1px solid #ff523b;
+}
+
+input:focus {
+	outline: none;
+}
+
+.small-img-row {
+	display: flex;
+	justify-content: space-between;
+}
+
+.small-img-col {
+	flex-basis: 24%;
+	cursor: pointer;
+}
+
+/*--------Login and Account page------*/
+.account-page {
+	padding: 50px 0;
+	background: radial-grandient(#fff, #ffd6d6);
+}
+
+.form-container {
+	background: #fff;
+	width: 300px;
+	height: 400px;
+	position: relative;
+	text-align: center;
+	padding: 20px 0;
+	margin: auto;
+	box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+}
+
+.form-container span {
+	font-weight: bold;
+	padding: 0 10px;
+	color: #555;
+	cursor: pointer;
+	width: 100px;
+	display: inline-block;
+}
+
+.form-btn {
+	display: inline-block;
+}
+
+.form-container form {
+	max-width: 400px;
+	padding: 0 20px;
+	position: absolute;
+	top: 75px;
+	transition: 1s;
+}
+
+form input {
+	width: 250px;
+	height: 30px;
+	margin: 10px 0;
+	padding: 0 10px;
+	border: 1px solid #ccc;
+}
+
+form .btn {
+	width: 100%;
+	border: none;
+	cursor: pointer;
+	margin: 10px 0;
+}
+
+form .btn:focus {
+	outline: none;
+
+}
+
+#LoginForm {
+	left: -300px;
+}
+
+#RegisterForm {
+	left: 0px;
+}
+
+#Indicator {
+	width: 100px;
+	border: none;
+	background: #ff523b;
+	height: 3px;
+	margin-top: 8px;
+	transform: translateX(100px);
+	transition: transform 1s;
+}
+.user-page{
+	width: 100%;
+	height: 100vh;
+	background-image: url(images/account_page.jpg);
+}
+.user-box{
+	margin: auto;
+	margin-top: 10px;
+	padding: 30px 80px;
+	max-width: max-content;
+	background:#ff523b; 	
+	align-items: center;
+	justify-content: center;
+	border-radius: 20px;
+	color:white;
+}
+.col1, .col2{
+	text-align: center;
+}
+.user-box form{
+	width: 100%;
+	padding: 12px;
+	margin: 8px 0;
+	box-sizing:content-box;
+}
+.default-pic{
+	border-radius: 50%;
+	width: 150px;
+	background: white;
+	padding: 6px;
+}
+.info-box{
+	background: white;
+	color: #999;
+	padding:60px 0;
+	margin-right: -80px;
+	margin-left: -80px;
+	margin-bottom: -40px;
+	border-radius: 20px;
+}
+.col2 button{
+	border-radius: 20px;
+	outline: none;
+	border: none;
+	background: white;
+	color: #999;
+	padding: 15px 60px;
+	font-size: 10px;
+	font-weight: bolder;
+	box-shadow: 0 5px 10px #000;
+}
+
+/*------- cart items -------*/
+.cart-page {
+	margin: 80px auto;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.cart-info {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+th {
+	text-align: left;
+	padding: 5px;
+	color: #fff;
+	background: #ff523b;
+	font-weight: normal;
+}
+
+td {
+	padding: 10px 5px;
+}
+
+td input {
+	width: 40px;
+	height: 30px;
+	padding: 5px;
+}
+
+td a {
+	color: #ff523b;
+	font-size: 12px;
+}
+
+td img {
+	width: 80px;
+	height: 80px;
+	margin-right: 10px;
+}
+
+/*------- about us -------*/
+.creator-info{
+	margin: auto;
+	padding: 60px;
+	display: flex;
+}
+
+.creator-info .row .creator{
+	padding: 10px;
+	text-align: left;
+	display: flex;
+}
+.creator p{
+	text-align: left;
+	font-weight: bold;
+	padding-left: 20px;
+}
+ion-icon {
+	padding-left: 20px;
+  	font-size: 50px;
+}
+.alert{
+	color: red;
+}
+/*-------Invoice----------*/
+.wrapper{
+	width: 550px;
+	height: 600px;
+	background: rgb(255, 128, 64);
+	position: relative; 
+	padding: auto;
+	margin: auto;
+}
+.wrapper .logo{
+	padding: 0px 0px;
+	position: relative;
+	margin-top: 0%;
+}
+.invoice-header{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 0.5 rem;
+}
+.title{
+	padding-top: 10%;
+	font-weight: 700;
+	font-size: 32px;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+	color: black;
+}
+
+/*----Admin------*/
+information-container{
+	margin: 0;
+	padding: 0;
+	max-width: 500px;
+}
+colA{
+	margin: auto;
+	padding: auto;
+}
