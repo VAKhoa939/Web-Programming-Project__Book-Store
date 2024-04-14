@@ -11,7 +11,8 @@ import data.*;
 @WebServlet("/catalog")
 public class CatalogController extends HttpServlet 
 {
-	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	public void doPost(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException 
 	{
 		ServletContext sc = getServletContext();
 		String requestURI = request.getRequestURI();
@@ -34,7 +35,8 @@ public class CatalogController extends HttpServlet
 		}
 	}
 
-	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	public void doGet(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException 
 	{
 		doPost(request, response);
 	}

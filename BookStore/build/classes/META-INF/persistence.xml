@@ -4,10 +4,10 @@
 	  	<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
   		<exclude-unlisted-classes>false</exclude-unlisted-classes>
   		<properties>
-    		<property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://dpg-clsjade5msrc73e6gnjg-a.singapore-postgres.render.com/bookstore_lhg0"/>
+    		<property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://dpg-cnvaluf109ks73bm3f5g-a.singapore-postgres.render.com/bookstore_n10p"/>
     		<property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
     		<property name="jakarta.persistence.jdbc.user" value="postgresbs"/>
-    		<property name="jakarta.persistence.jdbc.password" value="tmhBB63mpGWISHsfdFSkQTVIHE3IMbaa"/>
+    		<property name="jakarta.persistence.jdbc.password" value="JEtwiRkhhP5snApjdliIyL1wVUfWMCGf"/>
 			<property name="jakarta.persistence.schema-generation.database.action" value="create"/>
 		</properties>
 	</persistence-unit>
