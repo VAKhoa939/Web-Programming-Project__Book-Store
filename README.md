@@ -1,5 +1,5 @@
 Hướng dẫn cài đặt:
-1. Tải về JDK bản 17.0.5 và chạy file setup
+1. Tải về JDK bản 17.0.5 và chạy file setup.
 Link tải: https://download.oracle.com/java/17/archive/jdk-17.0.5_windows-x64_bin.exe
 
 2. Cấu hình CLASS PATH cho JDK theo link hướng dẫn sau:
