@@ -21,8 +21,8 @@ Lưu ý:
 - Các bước tải Apache Tomcat (trong cửa sổ New Server):
 Chọn Apache > Tomcat v10.0 Server > Add... > Download and Install > Finish > (Dẫn tới folder sẽ chứa Apache Tomcat) > Chờ server download xong (không còn lỗi) > Finish
 
-6. Tải project từ github về và import project vào workspace:
+̀5. Tải project từ github về và import project vào workspace:
 Trên thanh công cụ trong workspace Chọn File > Open Projects from File System > Diectory (Dẫn tới folder chứa project) > Finish
 
-7. Chạy project:
+6. Chạy project:
 Trong Project Explorer Chuột phải và project > Run As > Run On Server (> Chọn Apache Tomcat 10.0.27 nếu chưa có) > Run
