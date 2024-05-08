@@ -24,6 +24,7 @@
 			
 			<form action="account" method="post">
 				<input type="hidden" name="action" value="logout">
+				<input type="hidden" name="csrfToken" value="${csrfToken}">
 				<button type="submit" value="Log out">Logout</button>
 			</form>
 		</div>

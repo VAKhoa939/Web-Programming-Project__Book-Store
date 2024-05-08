@@ -37,4 +37,13 @@
     <servlet-name>DatabaseController</servlet-name>
     <url-pattern>/DatabaseController</url-pattern>
   </servlet-mapping>
+  <filter>
+    <display-name>SecurityFilters</display-name>
+    <filter-name>SecurityFilters</filter-name>
+    <filter-class>filter.SecurityFilters</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>SecurityFilters</filter-name>
+    <url-pattern>/SecurityFilters</url-pattern>
+  </filter-mapping>
 </web-app>

@@ -6,6 +6,7 @@
 		<c:forEach var="product" items="${products}">
 			<div class="col4">
 				<form action="detail" method="post">
+					<input type="hidden" name="csrfToken" value="${csrfToken}">
 					<input type="hidden" name="productCode" value="${product.getProductCode()}">
 					<button type="submit">
 						<img src="images/${product.getProductCode()}.png">

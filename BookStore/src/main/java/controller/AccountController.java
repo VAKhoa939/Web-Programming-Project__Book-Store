@@ -1,6 +1,7 @@
 package controller;
 
 import jakarta.servlet.*;
+
 import jakarta.servlet.annotation.*;
 import jakarta.servlet.http.*;
 import java.io.*;
@@ -15,6 +16,13 @@ public class AccountController extends HttpServlet
 {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
+		HttpSession session = request.getSession(true); // Create session if it doesn't exist
+        String csrfToken = (String) session.getAttribute("csrf_token");
+        if (csrfToken == null) {
+            csrfToken = generateCSRFToken(); // Generate CSRF token
+            session.setAttribute("csrf_token", csrfToken); // Store CSRF token in session
+        }
+        request.setAttribute("csrfToken", csrfToken); // Add CSRF token to request attributes
 		ServletContext sc = getServletContext();
 		String requestURI = request.getRequestURI();
 		String url = null;
@@ -23,6 +31,10 @@ public class AccountController extends HttpServlet
 		if (requestURI.endsWith("/account"))
 		{
 			action = request.getParameter("action");
+			if(action.length() > 50)
+            {
+                url =  "/login.jsp";
+            }
 			if (checkActiveSession(request, response))
 			{
 				if (action == null || action.isBlank())
@@ -105,6 +117,8 @@ public class AccountController extends HttpServlet
 
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
+		String csrfToken = request.getParameter("csrf_token");
+		
 		if (email == null|| password == null || email.isBlank() || password.isBlank())
 		{
 			message = "Please fill out all information.";
@@ -112,6 +126,18 @@ public class AccountController extends HttpServlet
 			request.setAttribute("email", email);
 			request.setAttribute("password", password);
 		}
+        else if (!validateCSRFToken(session, csrfToken)) 
+        {
+            message = "CSRF token mismatch!";
+            url = "/login.jsp";
+        }
+		else if(email.length() > 50 || password.length() > 50)
+        {
+            message = "Email or Password can not exceed 50 characters.";
+            url = "/login.jsp";
+            request.setAttribute("email", email);
+            request.setAttribute("password", password);
+        }
 		else if (UserDB.emailExists(email)) 
 		{
 			User temp = UserDB.selectUser(email);
@@ -125,6 +151,7 @@ public class AccountController extends HttpServlet
 				Cookie c = new Cookie("userEmail", email);
 				c.setMaxAge(60 * 60 * 24 * 30);
 				c.setPath("/");
+				c.setHttpOnly(true);
 				response.addCookie(c);
 				
 				message = "";
@@ -162,6 +189,8 @@ public class AccountController extends HttpServlet
 		String addr = request.getParameter("addr");
 		String phoneNo = request.getParameter("phoneNo");
 		String password = request.getParameter("password");
+		String csrfToken = request.getParameter("csrf_token");
+		
 		if (userName == null || email == null || addr == null || phoneNo == null || password == null
 				|| userName.isBlank() || email.isBlank() || addr.isBlank() || phoneNo.isBlank() || password.isBlank())
 		{
@@ -173,6 +202,21 @@ public class AccountController extends HttpServlet
 			request.setAttribute("phoneNo", phoneNo);
 			request.setAttribute("password", password);
 		}
+		else if (!validateCSRFToken(session, csrfToken)) 
+		{
+            message = "CSRF token mismatch!";
+            url = "/login.jsp";
+        }
+		else if (userName.length() > 50 || email.length() > 50 || addr.length() > 50 || phoneNo.length() > 50 || password.length() > 50)
+	    {
+			message = "Username, Email, Address, Phone Number and Password can not exceed 50 characters.";
+			url = "/login.jsp";
+			request.setAttribute("userName", userName);
+			request.setAttribute("email", email);
+			request.setAttribute("addr", addr);
+			request.setAttribute("phoneNo", phoneNo);
+			request.setAttribute("password", password);
+	    }
 		else if (UserDB.emailExists(email)) 
 		{
 			message = "Account already exists. Please use another email address.";
@@ -193,6 +237,7 @@ public class AccountController extends HttpServlet
 			UserDB.insert(user);
 			Cookie c = new Cookie("userEmail", email);
 			c.setMaxAge(60 * 60 * 24 * 30);
+			c.setHttpOnly(true);
 			c.setPath("/");
 			response.addCookie(c);
 			
@@ -229,10 +274,22 @@ public class AccountController extends HttpServlet
 			Cookie c = new Cookie("userEmail", userEmail);
 			c.setMaxAge(0);
 			c.setPath("/");
+			
 			response.addCookie(c);
 		}
 		request.setAttribute("mode", mode);
 		request.setAttribute("message", message);
 		return url;
 	}
+	
+    private String generateCSRFToken() 
+    {
+        return UUID.randomUUID().toString();
+    }
+
+    private boolean validateCSRFToken(HttpSession session, String requestCSRFToken) 
+    {
+        String sessionCSRFToken = (String) session.getAttribute("csrf_token");
+        return requestCSRFToken != null && requestCSRFToken.equals(sessionCSRFToken);
+    }
 }

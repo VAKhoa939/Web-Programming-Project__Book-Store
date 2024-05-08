@@ -14,12 +14,14 @@
 			
 			<form id="LoginForm" action="account" method="post">
 				<input type="hidden" name="action" value="login">
+				<input type="hidden" name="csrfToken" value="${csrfToken}">
 				<input type="email" placeholder="Email" name="email" value="<c:out value='${email}'/>"><br>
 				<input type="password" placeholder="Password" name="password" value="<c:out value='${password}'/>"><br>
 				<button type="submit" class="btn">Login</button>
 			</form>
 			<form id="RegisterForm" action="account" method="post">
 				<input type="hidden" name="action" value="register">
+				<input type="hidden" name="csrfToken" value="${csrfToken}">
 				<input type="email" placeholder="Email" name="email" value="<c:out value='${email}'/>"><br>
 				<input type="text" placeholder="User Name" name="userName" value="<c:out value='${userName}'/>"><br>
 				<input type="text" placeholder="Address" name="addr" value="<c:out value='${addr}'/>"><br>

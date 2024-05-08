@@ -13,6 +13,7 @@
 			<h4>${product.getCurrencyFormat()}</h4>
 			<form action="cart" method="post">
 				<input type="hidden" name="action" value="new">
+				<input type="hidden" name="csrfToken" value="${csrfToken}">
 				<input type="hidden" name="productCode" value="${product.getProductCode()}">
 				<input type="hidden" name="addQuantity" value="1">
 				<button class="btn" type="submit">Add to cart</button>

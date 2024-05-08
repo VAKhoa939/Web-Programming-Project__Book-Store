@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>Error</title>
 		<link rel="stylesheet" href="main.css" type="text/css">
+		<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; connect-src 'self'; img-src 'self'; style-src 'self'; base-uri 'self'; form-action 'self';">
     </head>
     <body>
         <h1>404 Error</h1>

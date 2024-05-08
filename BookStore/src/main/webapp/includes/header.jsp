@@ -23,7 +23,10 @@
 							<li><a href="index.jsp">Home</a></li>
 							<li><a href="catalog">Products</a></li>
 							<li><a href="aboutUs.jsp">About Us</a></li>
-							<li><a href="account">Account</a></li>
+							<li><a href="account">
+								Account
+								<input type="hidden" name="csrfToken" value="${csrfToken}">
+							</a></li>
 							<li>
 								<a href="cart">
 									<img src="images/favpng_font-awesome-shopping-cart-font.png" width="30px" height="30px">

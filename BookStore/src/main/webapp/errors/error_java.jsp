@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Error</title>
+		<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; connect-src 'self'; img-src 'self'; style-src 'self'; base-uri 'self'; form-action 'self';">
     </head>
     <body>
         <h1> Java Error</h1>
