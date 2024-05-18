@@ -31,13 +31,9 @@ public class AccountController extends HttpServlet
 		if (requestURI.endsWith("/account"))
 		{
 			action = request.getParameter("action");
-			if(action.length() > 50)
-            {
-                url =  "/login.jsp";
-            }
 			if (checkActiveSession(request, response))
 			{
-				if (action == null || action.isBlank())
+				if (action == null || action.isBlank() || action.length() > 50)
 				{
 					url = "/account.jsp";
 				}
@@ -48,7 +44,7 @@ public class AccountController extends HttpServlet
 			}
 			else
 			{
-				if (action == null || action.isBlank())
+				if (action == null || action.isBlank() || action.length() > 50)
 				{
 					url = "/login.jsp";
 				}
